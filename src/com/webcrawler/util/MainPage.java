@@ -68,8 +68,8 @@ public class MainPage {
 		}
 
 		//get all links and recursively call the processPage method
-		Elements questions = doc.select("a[href]");
-		for(Element link: questions){
+		Elements links = doc.select("a[href]");
+		for(Element link: links){
 			if(link.attr("href").contains("mit.edu"))
 				getUrls(link.attr("abs:href"));
 		}
