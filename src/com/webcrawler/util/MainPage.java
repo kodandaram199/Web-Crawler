@@ -63,14 +63,14 @@ public class MainPage {
 			e.printStackTrace();
 		}
 		 
-		if(doc.text().contains("research")){
+		if(doc.text().contains(keyword)){
 			System.out.println(URL);
 		}
 
 		//get all links and recursively call the processPage method
 		Elements links = doc.select("a[href]");
 		for(Element link: links){
-			if(link.attr("href").contains("mit.edu"))
+			if(link.attr("href").contains(URL))
 				getUrls(link.attr("abs:href"));
 		}
 	}
